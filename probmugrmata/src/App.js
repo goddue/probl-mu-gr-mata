@@ -8,7 +8,6 @@ function App() {
           <label>Название задачи</label>
           <input
             type="text"
-            placeholder="Например: Сделать отчёт"
           />
         </div>
         <div className="form-group">
