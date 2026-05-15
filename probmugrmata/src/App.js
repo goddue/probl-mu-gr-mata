@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const loadTasksFromStorage = () => {
+    const stored = localStorage.getItem('tasks');
+    if (stored) {
+      return JSON.parse(stored);
+    }
+    
+    return [];  };
+
+  const saveTasksToStorage = (tasks) => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  };
+
   const [newTitle, setNewTitle] = useState('');
   const [newDeadline, setNewDeadline] = useState('');
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(loadTasksFromStorage);
+
+  useEffect(() => {
+    saveTasksToStorage(tasks);
+  }, [tasks]);
 
   const handleStatusChange = (id, newStatus) => {
     setTasks(
@@ -76,7 +92,7 @@ function App() {
           </select>
         </div>
         <div className="task-count">
-          {tasks.length} Задачи
+          Количество задач: {tasks.length}
         </div>
       </div>
 
