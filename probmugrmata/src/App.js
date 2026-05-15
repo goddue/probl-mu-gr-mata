@@ -36,6 +36,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="date-header">Сегодня: {todayDateStr}</div>
       <div className="add-task-form">
         <div className="form-group">
           <label>Название задачи</label>

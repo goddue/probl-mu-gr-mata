@@ -116,3 +116,13 @@ body {
 .true {
 background: red;  
 }
+
+.date-header {
+  font-size: 1rem;
+  color: white;
+  background: black;
+  padding: 6px 14px;
+  margin-bottom: 24px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
