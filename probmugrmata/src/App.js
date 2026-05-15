@@ -63,6 +63,23 @@ function App() {
         </button>
       </div>
 
+      <div className="filter">
+        <div>
+          <span className="filter-label">Фильтр по статусу:</span>
+          <select
+            className="filter-select"
+          >
+            <option value="all">Все задачи</option>
+            <option value="To Do">Предстоящие</option>
+            <option value="In Progress">В процессе</option>
+            <option value="Done">Завершенные</option>
+          </select>
+        </div>
+        <div className="task-count">
+          {tasks.length} Задачи
+        </div>
+      </div>
+
       <div className="tasks-list">
         {tasks.map((task) => (
             <div
