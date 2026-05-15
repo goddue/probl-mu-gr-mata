@@ -6,6 +6,14 @@ function App() {
   const [newDeadline, setNewDeadline] = useState('');
   const [tasks, setTasks] = useState([]);
 
+  const handleStatusChange = (id, newStatus) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, status: newStatus } : task
+      )
+    );
+  }
+
   const handleAddTask = () => {
     const newTask = {
       id: Date.now(),
@@ -59,7 +67,8 @@ function App() {
               <div className="task-status">
                 <select
                   className="status-select"
-                  value={task.status}
+                value={task.status}
+                onChange={(e) => handleStatusChange(task.id, e.target.value)}
                 >
                   <option value="To Do">Сделать</option>
                   <option value="In Progress">В процессе выполнения</option>
