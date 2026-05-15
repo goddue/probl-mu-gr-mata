@@ -19,7 +19,7 @@ function App() {
       id: Date.now(),
       title: newTitle.trim(),
       deadline: newDeadline,
-      status: 'To Do',
+      status: 'ToDo',
     };
 
     setTasks([...tasks, newTask]);
@@ -55,7 +55,7 @@ function App() {
         {tasks.map((task) => (
             <div
               key={task.id}
-              className={'task-card'}
+              className={`task-card ${task.status}`}
             >
               <div className="task-info">
                 <div className="task-title">{task.title}</div>
@@ -70,8 +70,8 @@ function App() {
                 value={task.status}
                 onChange={(e) => handleStatusChange(task.id, e.target.value)}
                 >
-                  <option value="To Do">Сделать</option>
-                  <option value="In Progress">В процессе выполнения</option>
+                  <option value="ToDo">Сделать</option>
+                  <option value="InProgress">В процессе выполнения</option>
                   <option value="Done">Завершено</option>
                 </select>
               </div>

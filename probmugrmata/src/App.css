@@ -69,7 +69,7 @@ body {
 }
 
 .task-card {
-  background: #3b82f6;
+  
   border: 1px solid #e5e7eb;
   padding: 16px 20px;
   display: flex;
@@ -99,4 +99,20 @@ body {
   font-size: 0.95rem;
   height: 42px;
   align-self: flex-end; 
+}
+
+.ToDo {
+  background: yellow;
+}
+
+.InProgress {
+  background: #3b82f6;
+}
+
+.Done {
+  background: #41fb2d;
+}
+
+.overdue {
+background: red;  
 }
