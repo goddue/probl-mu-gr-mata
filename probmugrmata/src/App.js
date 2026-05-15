@@ -27,6 +27,13 @@ function App() {
     setNewDeadline('');
   };
 
+  const today = new Date();
+  const todayDateStr = today.toISOString().slice(0, 10);
+
+  const isOverdue = (task) => {
+    return task.status !== 'Done' && task.deadline < todayDateStr;
+  };
+
   return (
     <div className="App">
       <div className="add-task-form">
@@ -55,7 +62,7 @@ function App() {
         {tasks.map((task) => (
             <div
               key={task.id}
-              className={`task-card ${task.status}`}
+              className={`task-card ${task.status} ${isOverdue(task)}`}
             >
               <div className="task-info">
                 <div className="task-title">{task.title}</div>
