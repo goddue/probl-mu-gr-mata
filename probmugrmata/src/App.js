@@ -27,6 +27,10 @@ function App() {
     setNewDeadline('');
   };
 
+  const handleDeleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   const today = new Date();
   const todayDateStr = today.toISOString().slice(0, 10);
 
@@ -84,7 +88,7 @@ function App() {
                 </select>
               </div>
 
-              <button className="delete-btn">Удалить</button>
+              <button className="delete-btn" onClick={() => handleDeleteTask(task.id)}>Удалить</button>
             </div>
             ))}
       </div>

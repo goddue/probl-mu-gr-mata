@@ -92,7 +92,7 @@ body {
 
 .delete-btn {
   color: white;
-  background-color: red;
+  background-color: rgb(161, 0, 0);
   border: none;
   padding: 10px 24px;
   font-weight: 600;
